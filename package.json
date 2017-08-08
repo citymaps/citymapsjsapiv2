@@ -1,0 +1,23 @@
+{
+  "name": "citymaps-js-api-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify index.js | uglifyjs > ./dist/citymaps-dist.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.dev.tripadvisor.com:7999/maps/citymapsjsapiv2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^14.4.0",
+    "uglify-js": "^3.0.27"
+  },
+  "dependencies": {
+    "leaflet": "^1.2.0"
+  }
+}
