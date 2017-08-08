@@ -11,6 +11,8 @@
 
 'use strict';
 
+var VERSION = '__VERSION__';
+
 var leaflet = require('leaflet');
 
 module.exports = leaflet;
