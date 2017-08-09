@@ -11,7 +11,7 @@
 
 'use strict';
 
-var VERSION = '__VERSION__';
+var CITYMAPS_JS_API_VERSION = '__VERSION__';
 
 var leaflet = require('leaflet');
 
