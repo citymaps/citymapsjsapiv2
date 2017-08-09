@@ -13,6 +13,4 @@
 
 var CITYMAPS_JS_API_VERSION = '__VERSION__';
 
-var leaflet = require('leaflet');
-
-module.exports = leaflet;
+module.exports = window.L = require('leaflet/dist/leaflet-src');
