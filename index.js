@@ -11,6 +11,12 @@
 
 'use strict';
 
-var CITYMAPS_JS_API_VERSION = '__VERSION__';
+var leaflet = require('leaflet/dist/leaflet-src');
 
-module.exports = window.L = require('leaflet/dist/leaflet-src');
+require('./src/citymaps');
+
+typeof define === 'function' && define.amd ?
+define('maps/libcitymaps', [], function(require, exports) {
+  exports.L = window.L = leaflet;
+})
+: false;

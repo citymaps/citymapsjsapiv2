@@ -7,18 +7,13 @@
     <title>Leaflet test page</title>
 </head>
 <body>
-    <div id="mapid" style="width:1600px; height: 1300px"></div>
+    <div id="container" style="width:1600px; height: 1300px"></div>
     <script>
-        var mymap = L.map('mapid').setView([51.5074, -0.1278], 17);
-        //L.tileLayer('http://raster.localhost/{z}/{x}/{y}.jpg').addTo(mymap);
-        // L.tileLayer('http://maprender02:8080/tile/{z}/{x}/{y}').addTo(mymap);
-        //L.tileLayer('http://localhost:8080/tile/{z}/{x}/{y}').addTo(mymap);
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-          maxZoom: 18,
-          id: 'mapbox.streets',
-          accessToken: 'pk.eyJ1IjoiYmd1biIsImEiOiJlRTVXbENBIn0.tVaSmhr0MXPtu8hdktMl3g',
-        }).addTo(mymap);
+        var mymap = L.citymaps.map('container', {
+        }).setView([51.5074, -0.1278], 17);
+
+        var marker = L.marker([51.5, -0.09]).addTo(mymap);
+        marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
     </script>
 </body>
 </html>
-Add Comment
