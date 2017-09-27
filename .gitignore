@@ -6,6 +6,10 @@ idea/
 
 dist/
 
+# utils
+copy.sh
+
+# temp files
 *.log
 *.swo
 *.swp
