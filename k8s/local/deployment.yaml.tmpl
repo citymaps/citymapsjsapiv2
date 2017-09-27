@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: citymapsjsapiv2
+  namespace: citymaps
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      namespace: citymaps
+      labels:
+        app: citymapsjsapiv2-app
+      annotations:
+        version: "{{ date }}"
+    spec:
+      containers:
+        - name: citymapsjsapiv2
+          image: citymaps-docker.maven.dev.tripadvisor.com/citymapsjsapiv2:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: 500Mi
+              cpu: 200m
+            limits:
+              memory: 1Gi
+              cpu: 1
+          ports:
+            - name: http-port
+              containerPort: 80

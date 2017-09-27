@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: citymapsjsapiv2
+  namespace: citymaps
+spec:
+  clusterIP: None
+  selector:
+    app: citymapsjsapiv2-app
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
