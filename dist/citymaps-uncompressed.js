@@ -13,9 +13,9 @@
 
 var leaflet = require('leaflet/dist/leaflet-src');
 require('./src/citymaps');
+window.Leaflet = leaflet;
 
 typeof define === 'function' && define.amd ? define('maps/lib/citymaps', [], function () {
-  window.Leaflet = leaflet;
   return leaflet;
 }) : false;
 
