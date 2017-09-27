@@ -12,11 +12,10 @@
 'use strict';
 
 var leaflet = require('leaflet/dist/leaflet-src');
-
 require('./src/citymaps');
 
 typeof define === 'function' && define.amd ?
-define('maps/libcitymaps', [], function(require, exports) {
-  exports.L = window.L = leaflet;
-})
+  define('maps/lib/citymaps', [], function() {
+    return (window.Leaflet = leaflet);
+  })
 : false;

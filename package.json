@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build"    : "browserify index.js -t [ babelify --presets [ es2015 ] ] | uglifyjs > ./dist/citymaps.js",
-    "build-dev": "browserify index.js -t [ babelify --presets [ es2015 ] ] -o ./dist/citymaps-uncompressed.js"
+    "build-dev": "browserify index.js -t [ babelify --presets [ es2015 ] ] -o ./dist/citymaps-uncompressed.js --igv __filename,__dirname,process,Buffer,global,define",
+    "copy"     : "cp dist/citymaps-uncompressed.js /Users/bgundersen/Dev/trsrc-MAINLINE/site/js-amd/src/maps/lib/citymaps.js"
   },
   "repository": {
     "type": "git",
