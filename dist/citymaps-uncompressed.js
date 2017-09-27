@@ -15,7 +15,8 @@ var leaflet = require('leaflet/dist/leaflet-src');
 require('./src/citymaps');
 
 typeof define === 'function' && define.amd ? define('maps/lib/citymaps', [], function () {
-  return window.Leaflet = leaflet;
+  window.Leaflet = leaflet;
+  return leaflet;
 }) : false;
 
 },{"./src/citymaps":4,"leaflet/dist/leaflet-src":2}],2:[function(require,module,exports){
