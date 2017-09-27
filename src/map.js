@@ -3,10 +3,15 @@
 const devHost  = "http://raster.citymaps.svc.kube.cm.dev.tripadvisor.com";
 const prodHost = "";
 
+const CITYMAPS_DEFAULTS = {
+  keepBuffer: 5,
+  updateWhenIdle: false
+};
+
 let Citymap = L.Map.extend({
 
   initialize: function(element, _, options) {
-    L.Map.prototype.initialize.call(this, element, Object.assign({}, L.Map.prototype.options, options));
+    L.Map.prototype.initialize.call(this, element, Object.assign(CITYMAPS_DEFAULTS, L.Map.prototype.options, options));
 
     let tileLayerOptions = {};
 
